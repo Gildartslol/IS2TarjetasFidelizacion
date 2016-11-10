@@ -41,7 +41,7 @@ DROP TABLE IF EXISTS `mydb`.`Tarjeta` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Tarjeta` (
   `ntarjeta` DECIMAL(10) NOT NULL,
-  `npuntos` DECIMAL(10000) NOT NULL,
+  `npuntos` DECIMAL(65) NOT NULL,
   `Usuarios_dni` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`ntarjeta`, `Usuarios_dni`),
   INDEX `fk_Tarjeta_Usuarios1_idx` (`Usuarios_dni` ASC),
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `Tarjeta_ntarjeta` DECIMAL(10) NOT NULL,
   `Tarjeta_Usuarios_dni` VARCHAR(9) NOT NULL,
   `fecha` DATE NOT NULL,
-  `hora` TIME(10) NOT NULL,
+  `hora` TIME NOT NULL,
   `importe` DOUBLE NOT NULL,
   PRIMARY KEY (`idCompra`, `Tienda_cif`),
   INDEX `fk_Compra_Tienda1_idx` (`Tienda_cif` ASC),
