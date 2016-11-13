@@ -74,6 +74,12 @@ public class User_DAO {
 		return update(delUser + user.getDni() + "'");
 	}
 
+	/**
+	 * Actualiza el usuario en la base de datos dado un usuario
+	 * @param user usuario con los datos nuevos
+	 * @return true si funciona false si no
+	 * @throws QueryException error de conexion
+	 */
 	public static boolean updUsuario(Usuario user) throws QueryException{
 		String query = updUser + "nombre = '" + user.getNombre() + "', apellidos = '" + user.getApellidos() + "', "
 				+ "direccion = '" + user.getDireccion() + "', telefono = '" + user.getTelefono() + "', email = '"
